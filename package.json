@@ -1,0 +1,54 @@
+{
+  "name": "worksheet-user",
+  "version": "1.0.0",
+  "description": "User Service for worksheet app",
+  "main": "src/server.ts",
+  "repository": "https://github.com/renganatha10/worksheet-user",
+  "scripts": {
+    "start": "npm run build && npm run serve",
+    "build": "npm run build-ts && npm run tslint",
+    "serve": "node dist/server.js",
+    "watch":
+      "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve\"",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "debug": "npm run build && npm run watch-debug",
+    "serve-debug": "nodemon --inspect dist/server.js",
+    "watch-debug":
+      "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\"  \"npm run watch-ts\" \"npm run serve-debug\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "renganatha10",
+  "license": "ISC",
+  "nodemonConfig": {
+    "watch": ["src"],
+    "ext": "ts",
+    "exec": "ts-node ./src/server.ts"
+  },
+  "dependencies": {
+    "@types/mongoose": "^4.7.28",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.5",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/compression": "0.0.35",
+    "@types/cors": "^2.8.3",
+    "@types/dotenv": "^4.0.2",
+    "@types/express": "^4.0.39",
+    "@types/jsonwebtoken": "^7.2.3",
+    "@types/morgan": "^1.7.35",
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
+  }
+}

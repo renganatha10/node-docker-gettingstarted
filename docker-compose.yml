@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web:
+      image: renganatha10/worksheet-user
+      ports:
+        - "40000:3010"
+      environment:
+        - MONGO_CONNECTION=mongodb://mongo/worksheet-user
+      links:
+        - mongo
+  mongo:
+      image: mongo
+      volumes:
+        - mongodata:/data/db    
+      ports:
+        - "27017:27017"
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+volumes:
+  mongodata:

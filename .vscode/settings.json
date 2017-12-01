@@ -1,0 +1,18 @@
+{
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "tslint.autoFixOnSave": true,
+  "tslint.enable": true,
+  "editor.formatOnSave": true,
+  "prettier.bracketSpacing": true,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.cssEnable": ["css", "less", "scss"],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.minimap.enabled": false,
+  "javascript.format.enable": true,
+  "material-icon-theme.showUpdateMessage": false
+}
